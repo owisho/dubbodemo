@@ -8,4 +8,15 @@
 	<dubbo:service interface="per.owisho.learn.dubbointerdemo.DemoService"
 		ref="demoService" />
 	<bean id="demoService" class="per.owisho.learn.dubboservicedemo.impl.DemoServiceImpl" />
+
+	<!-- 等价代码（注释中的代码等价于未注释的代码）开始 -->
+	<dubbo:annotation package="per.owisho.learn.dubboservicedemo.annotation.impl"></dubbo:annotation>
+	<!-- 
+	<dubbo:annotation />
+	<context:component-scan base-package="per.owisho.learn.dubboservicedemo.annotation.impl">
+		<context:include-filter type="annotation"
+			expression="com.alibaba.dubbo.config.annotation.Service" />
+	</context:component-scan> -->
+	<!-- 等价代码（注释中的代码等价于未注释的代码）结束  -->
+	
 </beans>
