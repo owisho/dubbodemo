@@ -7,4 +7,7 @@
     <dubbo:registry address="multicast://224.5.6.7:1234"/>
     <dubbo:reference id="demoService" interface="per.owisho.learn.dubbointerdemo.DemoService"/>
     <dubbo:annotation package="per.owisho.learn.dubboclientdemo"></dubbo:annotation>
+    
+    <dubbo:reference id="callbackService" interface="per.owisho.learn.dubbointerdemo.CallbackService"></dubbo:reference>
+    
 </beans>

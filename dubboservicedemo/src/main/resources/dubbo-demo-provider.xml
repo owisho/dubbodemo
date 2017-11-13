@@ -19,4 +19,14 @@
 	</context:component-scan> -->
 	<!-- 等价代码（注释中的代码等价于未注释的代码）结束  -->
 	
+	<bean id="callbackService" class="per.owisho.learn.dubboservicedemo.callback.CallbackServiceImpl"></bean>
+	<dubbo:service interface="per.owisho.learn.dubbointerdemo.CallbackService" ref="callbackService" connections="1" callbacks="1000">
+		<dubbo:method name="addListener">
+			<dubbo:argument index="1" callback="true"></dubbo:argument>
+			<!-- 也可以通过指定类型的方式 -->
+			<!-- <dubbo:argument type="per.owisho.learn.dubbointerdemo.CallbackListener" callback="true"></dubbo:argument> -->
+		</dubbo:method>
+	</dubbo:service>
+	
+	
 </beans>
