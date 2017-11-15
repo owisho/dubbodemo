@@ -10,4 +10,9 @@
     
     <dubbo:reference id="callbackService" interface="per.owisho.learn.dubbointerdemo.CallbackService"></dubbo:reference>
     
+    <bean id="notifyImpl" class="per.owisho.learn.dubboclientdemo.NotifyImpl"></bean>
+    <dubbo:reference id="notifyService" interface="per.owisho.learn.dubbointerdemo.NotifyService" version="1.0.0" group="cn">
+    	<dubbo:method name="get" async="true" onreturn="notifyImpl.onreturn" onthrow="notifyImpl.onthrow"></dubbo:method>
+    </dubbo:reference>
+    
 </beans>

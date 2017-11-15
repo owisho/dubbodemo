@@ -28,5 +28,9 @@
 		</dubbo:method>
 	</dubbo:service>
 	
+	<bean id="notifyServiceImpl" class="per.owisho.learn.dubboservicedemo.notify.NotifyServiceImpl"></bean>
+	<dubbo:service interface="per.owisho.learn.dubbointerdemo.NotifyService" ref="notifyServiceImpl" version="1.0.0" group="cn">
+	</dubbo:service>
+	
 	
 </beans>
